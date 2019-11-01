@@ -1,0 +1,10 @@
+name: Postprocessing
+description: Postprocessing Status
+inputs:
+implementation:
+  container:
+    image: aipipeline/postprocessing:v0.0.1
+    command: ['python']
+    args: [
+      -u, postprocessing.py
+    ]
