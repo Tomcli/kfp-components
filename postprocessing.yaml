@@ -2,7 +2,7 @@ name: Postprocessing
 description: Postprocessing Status
 inputs:
   - {name: notification_type,               type: String, default: 'training',   description: 'Notification type'}
-  - {name: pipeine_name,                    type: String, default: '',         description: 'pipeine name'}
+  - {name: pipeline_name,                    type: String, default: '',         description: 'pipeine name'}
 implementation:
   container:
     image: aipipeline/postprocessing:v0.0.2
@@ -10,5 +10,5 @@ implementation:
     args: [
       -u, postprocessing.py,
       --notification_type, {inputValue: notification_type},
-      --pipeine_name, {inputValue: pipeine_name}
+      --pipeline_name, {inputValue: pipeline_name}
     ]
